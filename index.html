@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style/style.css">
+    <script src="https://kit.fontawesome.com/81d24d0b98.js" crossorigin="anonymous"></script>
+    <title>Shop</title>
+</head>
+<body>
+    <div class="overlay"></div>
+    <div class="upward" onclick="scrollingTop()"><i class="fa-solid fa-chevron-up"></i></div>
+    <header class="header">
+        <div class="wrapper header__wrapper">
+            <div class="logo wrapper__logo">
+                <svg width="22" height="24" viewBox="0 0 22 24" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <rect width="22" height="24" fill="url(#pattern0)"/>
+                    <defs>
+                    <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+                    <use xlink:href="#image0_1_3" transform="matrix(0.0170455 0 0 0.015625 -0.0454545 0)"/>
+                    </pattern>
+                    <image id="image0_1_3" width="64" height="64" xlink:href="data:image/png;base64,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"/>
+                    </defs>
+                    </svg>
+            </div>
+            <nav class="menu wrapper__menu">
+                <input type="checkbox" name="" id="menu__burger">
+                <label class="menu__btn" for="menu__burger"><span></span></label>
+                <ul class="layout-categories menu__layout-categories">
+                    <li class="categories-list layout-categories__categories-list"><a href="#t-shirt">Футболки</a></li>
+                    <li class="categories-list layout-categories__categories-list"><a href="#panamanian">Панамы</a></li>
+                    <li class="categories-list layout-categories__categories-list"><a href="#accessories">Аксессуары</a></li>
+                    <li class="categories-list layout-categories__categories-list"><a href="#toys">Игрушки</a></li>
+                </ul>
+            </nav>
+
+            <label id="moon-btn" class="btn-menu toggle-label" for="toggle">
+                <input type="checkbox" name="checkbox" id="toggle" class="toggle">
+
+                <div class="slider round">
+            
+
+                  <svg id="sun-icon" width="17" height="16" viewBox="0 0 17 16" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M7.61111 1.18519V0.888889C7.61111 0.653141 7.70476 0.427049 7.87146 0.26035C8.03816 0.0936506 8.26425 0 8.5 0C8.73575 0 8.96184 0.0936506 9.12854 0.26035C9.29524 0.427049 9.38889 0.653141 9.38889 0.888889V1.18519C9.38889 1.42093 9.29524 1.64703 9.12854 1.81372C8.96184 1.98042 8.73575 2.07407 8.5 2.07407C8.26425 2.07407 8.03816 1.98042 7.87146 1.81372C7.70476 1.64703 7.61111 1.42093 7.61111 1.18519ZM13.537 8C13.537 8.99623 13.2416 9.97009 12.6881 10.7984C12.1347 11.6268 11.348 12.2724 10.4276 12.6536C9.50719 13.0349 8.49441 13.1346 7.51732 12.9403C6.54023 12.7459 5.64272 12.2662 4.93828 11.5617C4.23383 10.8573 3.7541 9.95977 3.55975 8.98268C3.36539 8.00559 3.46514 6.99281 3.84638 6.07241C4.22763 5.15201 4.87324 4.36533 5.70157 3.81186C6.52991 3.25838 7.50377 2.96296 8.5 2.96296C9.83548 2.96434 11.1159 3.49546 12.0602 4.43979C13.0045 5.38412 13.5357 6.66452 13.537 8ZM11.7593 8C11.7593 7.35538 11.5681 6.72523 11.21 6.18925C10.8518 5.65327 10.3428 5.23552 9.74726 4.98884C9.15171 4.74215 8.49638 4.67761 7.86415 4.80337C7.23192 4.92913 6.65117 5.23954 6.19536 5.69536C5.73954 6.15117 5.42913 6.73192 5.30337 7.36415C5.17761 7.99638 5.24215 8.65171 5.48884 9.24726C5.73552 9.84282 6.15327 10.3518 6.68925 10.71C7.22523 11.0681 7.85538 11.2593 8.5 11.2593C9.36411 11.2583 10.1925 10.9146 10.8036 10.3036C11.4146 9.69254 11.7583 8.86411 11.7593 8ZM2.83407 3.59185C2.91676 3.67454 3.01492 3.74012 3.12295 3.78487C3.23098 3.82962 3.34677 3.85265 3.4637 3.85265C3.58064 3.85265 3.69642 3.82962 3.80446 3.78487C3.91249 3.74012 4.01065 3.67454 4.09333 3.59185C4.17602 3.50917 4.24161 3.41101 4.28635 3.30298C4.3311 3.19494 4.35413 3.07916 4.35413 2.96222C4.35413 2.84529 4.3311 2.7295 4.28635 2.62147C4.24161 2.51344 4.17602 2.41528 4.09333 2.33259L3.79704 2.0363C3.63005 1.86931 3.40356 1.7755 3.16741 1.7755C2.93125 1.7755 2.70477 1.86931 2.53778 2.0363C2.37079 2.20328 2.27698 2.42977 2.27698 2.66593C2.27698 2.90208 2.37079 3.12857 2.53778 3.29556L2.83407 3.59185ZM2.83407 12.4067L2.53778 12.703C2.45509 12.7856 2.3895 12.8838 2.34476 12.9918C2.30001 13.0999 2.27698 13.2157 2.27698 13.3326C2.27698 13.4495 2.30001 13.5653 2.34476 13.6733C2.3895 13.7814 2.45509 13.8795 2.53778 13.9622C2.70477 14.1292 2.93125 14.223 3.16741 14.223C3.28434 14.223 3.40013 14.2 3.50816 14.1552C3.61619 14.1105 3.71435 14.0449 3.79704 13.9622L4.09333 13.6659C4.26032 13.4989 4.35413 13.2725 4.35413 13.0363C4.35413 12.8001 4.26032 12.5737 4.09333 12.4067C3.92635 12.2397 3.69986 12.1459 3.4637 12.1459C3.22755 12.1459 3.00106 12.2397 2.83407 12.4067ZM13.537 3.85185C13.6538 3.85194 13.7694 3.82903 13.8773 3.78442C13.9853 3.73981 14.0833 3.67437 14.1659 3.59185L14.4622 3.29556C14.6292 3.12857 14.723 2.90208 14.723 2.66593C14.723 2.42977 14.6292 2.20328 14.4622 2.0363C14.2952 1.86931 14.0688 1.7755 13.8326 1.7755C13.5964 1.7755 13.37 1.86931 13.203 2.0363L12.9067 2.33259C12.7816 2.45692 12.6964 2.61563 12.6618 2.78854C12.6272 2.96145 12.6448 3.14075 12.7123 3.30363C12.7799 3.46651 12.8944 3.6056 13.0413 3.70322C13.1881 3.80084 13.3607 3.85258 13.537 3.85185ZM14.1659 12.4081C13.9989 12.2412 13.7725 12.1473 13.5363 12.1473C13.3001 12.1473 13.0737 12.2412 12.9067 12.4081C12.7397 12.5751 12.6459 12.8016 12.6459 13.0378C12.6459 13.2739 12.7397 13.5004 12.9067 13.6674L13.203 13.9637C13.37 14.1307 13.5964 14.2245 13.8326 14.2245C14.0688 14.2245 14.2952 14.1307 14.4622 13.9637C14.6292 13.7967 14.723 13.5702 14.723 13.3341C14.723 13.0979 14.6292 12.8714 14.4622 12.7044L14.1659 12.4081ZM2.57407 8C2.57407 7.76425 2.48042 7.53816 2.31372 7.37146C2.14703 7.20476 1.92093 7.11111 1.68519 7.11111H1.38889C1.15314 7.11111 0.927049 7.20476 0.76035 7.37146C0.593651 7.53816 0.5 7.76425 0.5 8C0.5 8.23575 0.593651 8.46184 0.76035 8.62854C0.927049 8.79524 1.15314 8.88889 1.38889 8.88889H1.68519C1.92093 8.88889 2.14703 8.79524 2.31372 8.62854C2.48042 8.46184 2.57407 8.23575 2.57407 8ZM8.5 13.9259C8.26425 13.9259 8.03816 14.0196 7.87146 14.1863C7.70476 14.353 7.61111 14.5791 7.61111 14.8148V15.1111C7.61111 15.3469 7.70476 15.573 7.87146 15.7396C8.03816 15.9063 8.26425 16 8.5 16C8.73575 16 8.96184 15.9063 9.12854 15.7396C9.29524 15.573 9.38889 15.3469 9.38889 15.1111V14.8148C9.38889 14.5791 9.29524 14.353 9.12854 14.1863C8.96184 14.0196 8.73575 13.9259 8.5 13.9259ZM15.6111 7.11111H15.3148C15.0791 7.11111 14.853 7.20476 14.6863 7.37146C14.5196 7.53816 14.4259 7.76425 14.4259 8C14.4259 8.23575 14.5196 8.46184 14.6863 8.62854C14.853 8.79524 15.0791 8.88889 15.3148 8.88889H15.6111C15.8469 8.88889 16.073 8.79524 16.2396 8.62854C16.4063 8.46184 16.5 8.23575 16.5 8C16.5 7.76425 16.4063 7.53816 16.2396 7.37146C16.073 7.20476 15.8469 7.11111 15.6111 7.11111Z"
+                      fill="#E4E2E6" />
+                  </svg>
+
+                  <svg id="moon-icon" width="16" height="15" viewBox="0 0 16 15" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M15.4705 9.56778C14.9954 11.1189 14.0431 12.4807 12.7492 13.4593C11.6131 14.3143 10.2613 14.8358 8.84541 14.9652C7.4295 15.0946 6.00554 14.8268 4.73338 14.1918C3.46121 13.5569 2.39119 12.58 1.64341 11.3707C0.89563 10.1614 0.499692 8.76763 0.500036 7.34582C0.494924 5.68626 1.03443 4.07086 2.03577 2.74743C3.01439 1.45352 4.37618 0.501225 5.92734 0.0260553C6.02957 -0.00542421 6.13845 -0.00843861 6.24227 0.0173363C6.34609 0.0431112 6.44092 0.0967002 6.51656 0.17234C6.5922 0.24798 6.64579 0.342808 6.67156 0.446627C6.69734 0.550446 6.69432 0.659328 6.66284 0.761562C6.32366 1.88352 6.29522 3.07649 6.58056 4.21334C6.8659 5.35019 7.45432 6.38833 8.28313 7.21714C9.11194 8.04595 10.1501 8.63437 11.2869 8.91971C12.4238 9.20505 13.6167 9.17661 14.7387 8.83742C14.8409 8.80594 14.9498 8.80293 15.0536 8.8287C15.1575 8.85448 15.2523 8.90807 15.3279 8.98371C15.4036 9.05935 15.4572 9.15417 15.4829 9.25799C15.5087 9.36181 15.5057 9.47069 15.4742 9.57293L15.4705 9.56778Z"
+                      fill="#1B1B1F" />
+                  </svg>
+                </div>
+              </label>
+
+        </div>
+
+    </header>
+
+    <section class="first-section">
+        <div class="wrapper first-section__wrapper">
+          <h1>NEW COLLECTION</h1>
+          <div class="new-collection-card wrapper__new-collection-card">
+            <div class="new-collection-list"> <a href="#t-shirt"><img class="new-collection-img" src="/img/t-shirt-new.img" alt=""></a></div>
+            <div class="new-collection-list"> <a href="#t-shirt"><img class="new-collection-img" src="/img/57010466_52.img" alt=""></a></div>
+            <div class="new-collection-list"><a href="#panamanian"><img class="new-collection-img" src="/img/57010750_43-99999999_01.img" alt=""></a></div>
+          </div>
+
+
+        </div>
+    </section>
+<section id="t-shirt" class="second-section">
+    <div class="wrapper second-section__wrapper">
+        <h2>T-SHIRTS</h2>
+        <div class="wr-collection-card">
+            <div class="collection-card">
+                <img class="img-card" src="/img/0264380028_6_1_1.jpg" alt="">
+                <p class="name-collection">Футболка с принтом</p>
+                <span class="data"></span>
+                <button class="btn-buy">КУПИТЬ</button>
+            </div>
+            <div class="collection-card">
+                <img class="img-card" src="/img/2335163430_6_20_1.jpg" alt="">
+                <p class="name-collection">Футболка с принтом</p>
+                <span class="data"></span>
+                <button class="btn-buy">КУПИТЬ</button>
+            </div>
+            <div class="collection-card">
+                <img class="img-card" src="/img/4174171600_6_1_1.jpg" alt="">
+                <p class="name-collection">Футболка с принтом</p>
+                <span class="data"></span>
+                <button class="btn-buy">КУПИТЬ</button>
+            </div>
+            <div class="collection-card">
+                <img class="img-card" src="/img/4174172819_6_20_1.jpg" alt="">
+                <p class="name-collection">Футболка с принтом</p>
+                <span class="data"></span>
+                <button class="btn-buy">КУПИТЬ</button>
+            </div>
+            <div class="collection-card">
+                <img class="img-card" src="/img/4424157706_6_20_1.jpg" alt="">
+                <p class="name-collection">Футболка с принтом</p>
+                <span class="data"></span>
+                <button class="btn-buy">КУПИТЬ</button>
+            </div>
+            <div class="collection-card">
+                <img class="img-card" src="/img/5584375105_6_1_1.jpg" alt="">
+                <p class="name-collection">Футболка с принтом</p>
+                <span class="data"></span>
+                <button class="btn-buy">КУПИТЬ</button>
+            </div>
+            <div class="collection-card">
+                <img class="img-card" src="/img/5644059250_6_1_1.jpg" alt="">
+                <p class="name-collection">Футболка с принтом</p>
+                <span class="data"></span>
+                <button class="btn-buy">КУПИТЬ</button>
+            </div>
+            <div class="collection-card">
+                <img class="img-card" src="/img/57050481_20_B.img" alt="">
+                <p class="name-collection">Футболка с принтом</p>
+                <span class="data"></span>
+                <button class="btn-buy">КУПИТЬ</button>
+            </div>
+            <div class="collection-card">
+                <img class="img-card" src="/img/57040410_20_B.img" alt="">
+                <p class="name-collection">Футболка с принтом</p>
+                <span class="data"></span>
+                <button class="btn-buy">КУПИТЬ</button>
+            </div>
+            <div class="collection-card">
+                <img class="img-card" src="/img/57010467_52_B.img" alt="">
+                <p class="name-collection">Футболка с принтом</p>
+                <span class="data"></span>
+                <button class="btn-buy">КУПИТЬ</button>
+            </div>
+
+
+        </div>
+    </div>
+
+</section>
+
+<section id="panamanian" class="third-section">
+    <div class="wrapper third-section__wrapper">
+        <h3>PANAMANIAN</h3>
+        <div class="wr-collection-card">
+            <div class="collection-card">
+                <img class="img-card" src="/img/pan.jpg" alt="">
+                <p class="name-collection">Панама</p>
+                <span class="data"></span>
+                <button class="btn-buy">КУПИТЬ</button>
+            </div>
+            <div class="collection-card">
+                <img class="img-card" src="/img/p1.jpg" alt="">
+                <p class="name-collection">Панама</p>
+                <span class="data"></span>
+                <button class="btn-buy">КУПИТЬ</button>
+            </div>
+            <div class="collection-card">
+                <img class="img-card" src="/img/p2.jpg" alt="">
+                <p class="name-collection">Панама</p>
+                <span class="data"></span>
+                <button class="btn-buy">КУПИТЬ</button>
+            </div>
+            <div class="collection-card">
+                <img class="img-card" src="/img/p3.jpg" alt="">
+                <p class="name-collection">Панама</p>
+                <span class="data"></span>
+                <button class="btn-buy">КУПИТЬ</button>
+            </div>
+            <div class="collection-card">
+                <img class="img-card" src="/img/p4.jpg" alt="">
+                <p class="name-collection">Панама</p>
+                <span class="data"></span>
+                <button class="btn-buy">КУПИТЬ</button>
+            </div>
+            <div class="collection-card">
+                <img class="img-card" src="/img/p5.jpg" alt="">
+                <p class="name-collection">Панама</p>
+                <span class="data"></span>
+                <button class="btn-buy">КУПИТЬ</button>
+            </div>
+            <div class="collection-card">
+                <img class="img-card" src="/img/p6.jpg" alt="">
+                <p class="name-collection">Панама</p>
+                <span class="data"></span>
+                <button class="btn-buy">КУПИТЬ</button>
+            </div>
+            <div class="collection-card">
+                <img class="img-card" src="/img/p7.jpg" alt="">
+                <p class="name-collection">Панама</p>
+                <span class="data"></span>
+                <button class="btn-buy">КУПИТЬ</button>
+            </div>
+            <div class="collection-card">
+                <img class="img-card" src="/img/p8.jpg" alt="">
+                <p class="name-collection">Панама</p>
+                <span class="data"></span>
+                <button class="btn-buy">КУПИТЬ</button>
+            </div>
+            <div class="collection-card">
+                <img class="img-card" src="/img/p9.jpg" alt="">
+                <p class="name-collection">Панама</p>
+                <span class="data"></span>
+                <button class="btn-buy">КУПИТЬ</button>
+            </div>
+            <div class="collection-card">
+                <img class="img-card" src="/img/p10.jpg" alt="">
+                <p class="name-collection">Панама</p>
+                <span class="data"></span>
+                <button class="btn-buy">КУПИТЬ</button>
+            </div>
+            <div class="collection-card">
+                <img class="img-card" src="/img/p11.jpg" alt="">
+                <p class="name-collection">Панама</p>
+                <span class="data"></span>
+                <button class="btn-buy">КУПИТЬ</button>
+            </div>
+
+
+        </div>
+    </div>
+</section>
+<section id="accessories" class="four-section">
+    <div class="wrapper four-section__wrapper">
+        <h4>ACCESSORIES</h4>
+        <div class="wr-collection-card">
+            <div class="collection-card">
+                <img class="img-card" src="/img/acs.webp" alt="">
+                <p class="name-collection">Аксессуары</p>
+                <span class="data"></span>
+                <button class="btn-buy">КУПИТЬ</button>
+            </div>
+            <div class="collection-card">
+                <img class="img-card" src="/img/acs1.webp" alt="">
+                <p class="name-collection">Аксессуары</p>
+                <span class="data"></span>
+                <button class="btn-buy">КУПИТЬ</button>
+            </div>
+            <div class="collection-card">
+                <img class="img-card" src="/img/acs10.webp" alt="">
+                <p class="name-collection">Аксессуары</p>
+                <span class="data"></span>
+                <button class="btn-buy">КУПИТЬ</button>
+            </div>
+            <div class="collection-card">
+                <img class="img-card" src="/img/acs11.webp" alt="">
+                <p class="name-collection">Аксессуары</p>
+                <span class="data"></span>
+                <button class="btn-buy">КУПИТЬ</button>
+            </div>
+            <div class="collection-card">
+                <img class="img-card" src="/img/acs12.webp" alt="">
+                <p class="name-collection">Аксессуары</p>
+                <span class="data"></span>
+                <button class="btn-buy">КУПИТЬ</button>
+            </div>
+            <div class="collection-card">
+                <img class="img-card" src="/img/acs13.webp" alt="">
+                <p class="name-collection">Аксессуары</p>
+                <span class="data"></span>
+                <button class="btn-buy">КУПИТЬ</button>
+            </div>
+            <div class="collection-card">
+                <img class="img-card" src="/img/acs2.webp" alt="">
+                <p class="name-collection">Аксессуары</p>
+                <span class="data"></span>
+                <button class="btn-buy">КУПИТЬ</button>
+            </div>
+            <div class="collection-card">
+                <img class="img-card" src="/img/acs3.webp" alt="">
+                <p class="name-collection">Аксессуары</p>
+                <span class="data"></span>
+                <button class="btn-buy">КУПИТЬ</button>
+            </div>
+            <div class="collection-card">
+                <img class="img-card" src="/img/acs4.webp" alt="">
+                <p class="name-collection">Аксессуары</p>
+                <span class="data"></span>
+                <button class="btn-buy">КУПИТЬ</button>
+            </div>
+            <div class="collection-card">
+                <img class="img-card" src="/img/acs6.webp" alt="">
+                <p class="name-collection">Аксессуары</p>
+                <span class="data"></span>
+                <button class="btn-buy">КУПИТЬ</button>
+            </div>
+            <div class="collection-card">
+                <img class="img-card" src="/img/acs7.webp" alt="">
+                <p class="name-collection">Аксессуары</p>
+                <span class="data"></span>
+                <button class="btn-buy">КУПИТЬ</button>
+            </div>
+            <div class="collection-card">
+                <img class="img-card" src="/img/acs8.webp" alt="">
+                <p class="name-collection">Аксессуары</p>
+                <span class="data"></span>
+                <button class="btn-buy">КУПИТЬ</button>
+            </div>
+            <div class="collection-card">
+                <img class="img-card" src="/img/acs9.webp" alt="">
+                <p class="name-collection">Аксессуары</p>
+                <span class="data"></span>
+                <button class="btn-buy">КУПИТЬ</button>
+            </div>
+
+        </div>
+    </div>
+</section>
+<section id="toys" class="fives-section">
+    <div class="wrapper fives-section__wrapper">
+        <h5>TOYS</h5>
+        <div class="wr-collection-card">
+            <div class="collection-card">
+                <img class="img-card" src="/img/t.jpg" alt="">
+                <p class="name-collection">Игрушка</p>
+                <span class="data"></span>
+                <button class="btn-buy">КУПИТЬ</button>
+            </div>
+            <div class="collection-card">
+                <img class="img-card" src="/img/t1.jpg" alt="">
+                <p class="name-collection">Игрушка</p>
+                <span class="data"></span>
+                <button class="btn-buy">КУПИТЬ</button>
+            </div>
+            <div class="collection-card">
+                <img class="img-card" src="/img/t2.jpg" alt="">
+                <p class="name-collection">Игрушка</p>
+                <span class="data"></span>
+                <button class="btn-buy">КУПИТЬ</button>
+            </div>
+            <div class="collection-card">
+                <img class="img-card" src="/img/t3.jpg" alt="">
+                <p class="name-collection">Игрушка</p>
+                <span class="data"></span>
+                <button class="btn-buy">КУПИТЬ</button>
+            </div>
+            <div class="collection-card">
+                <img class="img-card" src="/img/t4.jpg" alt="">
+                <p class="name-collection">Игрушка</p>
+                <span class="data"></span>
+                <button class="btn-buy">КУПИТЬ</button>
+            </div>
+            <div class="collection-card">
+                <img class="img-card" src="/img/t5.jpg" alt="">
+                <p class="name-collection">Игрушка</p>
+                <span class="data"></span>
+                <button class="btn-buy">КУПИТЬ</button>
+            </div>
+            <div class="collection-card">
+                <img class="img-card" src="/img/t6.jpg" alt="">
+                <p class="name-collection">Игрушка</p>
+                <span class="data"></span>
+                <button class="btn-buy">КУПИТЬ</button>
+            </div>
+            <div class="collection-card">
+                <img class="img-card" src="/img/t7.jpg" alt="">
+                <p class="name-collection">Игрушка</p>
+                <span class="data"></span>
+                <button class="btn-buy">КУПИТЬ</button>
+            </div>
+            <div class="collection-card">
+                <img class="img-card" src="/img/t8.jpg" alt="">
+                <p class="name-collection">Игрушка</p>
+                <span class="data"></span>
+                <button class="btn-buy">КУПИТЬ</button>
+            </div>
+            <div class="collection-card">
+                <img class="img-card" src="/img/t9.jpg" alt="">
+                <p class="name-collection">Игрушка</p>
+                <span class="data"></span>
+                <button class="btn-buy">КУПИТЬ</button>
+            </div>
+            <div class="collection-card">
+                <img class="img-card" src="/img/t10.jpg" alt="">
+                <p class="name-collection">Игрушка</p>
+                <span class="data"></span>
+                <button class="btn-buy">КУПИТЬ</button>
+            </div>
+
+
+        </div>
+    </div>
+</section>
+<hr>
+<footer>
+    <div class="wrapper wrapper__footer">
+        <ul class="layout-categories menu__layout-categories">
+                    <li class="categories-list layout-categories__categories-list"><a href="#accessories">Аксессуары</a></li>
+                    <li class="categories-list layout-categories__categories-list"><a href="#panamanian">Панамы</a></li>
+                   
+                    <li class="categories-list layout-categories__categories-list"><a href="#toys">Игрушки</a></li>
+                    <li class="categories-list layout-categories__categories-list"><a href="#t-shirt">Футболки</a></li>
+                </ul>
+    </div>
+</footer>
+
+<form id="buying" action="#">
+    <div class="wrapper">
+        <div class="display wrapper__display">
+            <div class="quantity">
+                <button class="quantity-btn plus">+</button><input class="quantity-input" placeholder="Количество" type="number" name="" id=""/><button class="quantity-btn minus">-</button>
+            </div>
+            <div class="colors">
+                <input type="radio" name="color" id="white" value="white">
+                <label for="white"><span class="white"></span></label>
+
+                <input type="radio" name="color" id="red" value="#DB2828">
+                <label for="red"><span class="red"></span></label>
+
+                <input type="radio" name="color" id="black" value="black">
+                <label for="black"><span class="black"></span></label>
+
+                <input type="radio" name="color" id="purple" value="#A333C8">
+                <label for="purple"><span class="purple"></span></label>
+            </div>
+            <textarea placeholder="Комментарии к заказу" name="comment" id="comment" cols="30" rows="3" maxlength="2000"></textarea>
+            <div>
+                <button class="btn-form byu" type="submit">Купить</button>
+                <button class="btn-form cansel">Отменить</button>
+            </div>
+        </div>
+
+    </div>
+
+</form>
+
+<script src="/js/app.js"></script>
+</body>
+
+</html>
